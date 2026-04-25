@@ -1,21 +1,23 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
+import Profile from './pages/Profile.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 function App() {
   return (
-    <div>
-      <h1>My First React Router App</h1>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/profile/:username" element={<h2>User Profile - Coming Soon!</h2>} />
-          <Route path="*" element={<Not-Found />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/profile/:username" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
