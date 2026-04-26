@@ -5,6 +5,7 @@ import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Profile from './pages/Profile.jsx';
 import NotFound from './pages/NotFound.jsx';
+import Layout from './pages/Layout.jsx';
 
 // function App() {
 //   return (
