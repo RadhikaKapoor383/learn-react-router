@@ -26,8 +26,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Navbar /> {/* Always visible at top */}
         <Route path='/' element={<Layout />}></Route>
-        <Route index element={<Home />} />
+        <Route path='/home' element={<Home />} />
         {/* path='/about' means: when URL is '/about', show About */}
         <Route path='/about' element={<About />} />
         {/* path='/products' shows the Products list page */}
