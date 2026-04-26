@@ -6,18 +6,35 @@ import Contact from './pages/Contact.jsx';
 import Profile from './pages/Profile.jsx';
 import NotFound from './pages/NotFound.jsx';
 
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <Navbar />
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/about" element={<About />} />
+//         <Route path="/contact" element={<Contact />} />
+//         <Route path="/profile/:username" element={<Profile />} />
+//         <Route path="*" element={<NotFound />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/profile/:username" element={<Profile />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path='/' element={<Home />} />
+        {/* path='/about' means: when URL is '/about', show About */}
+        <Route path='/about' element={<About />} />
+        {/* path='/products' shows the Products list page */}
+        {/* <Route path='/products' element={<Products />} /> */}
+        {/* path='*' catches everything else — like a 404 page */}
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
+
   );
 }
 
