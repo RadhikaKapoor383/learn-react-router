@@ -27,7 +27,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}></Route>
-        <Route path='/home' element={<Home />} />
+        <Route index element={<Home />} />
         {/* path='/about' means: when URL is '/about', show About */}
         <Route path='/about' element={<About />} />
         {/* path='/products' shows the Products list page */}
