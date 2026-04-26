@@ -26,14 +26,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Navbar /> {/* Always visible at top */}
-        <Route path='/' element={<Layout />}></Route>
-        <Route path='/home' element={<Home />} />
-        {/* path='/about' means: when URL is '/about', show About */}
-        <Route path='/about' element={<About />} />
-        {/* path='/products' shows the Products list page */}
-        {/* <Route path='/products' element={<Products />} /> */}
-        {/* path='*' catches everything else — like a 404 page */}
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='about' element={<About />} />
+          <Route path='contact' element={<Contact />} />
+          <Route path='profile/:username' element={<Profile />} />
+        </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
