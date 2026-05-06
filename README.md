@@ -184,5 +184,4 @@ npm run lint      # Run ESLint checks
 - Improve styling with a shared CSS file or component library.
 
 ## License
-
 Educational repository for learning purposes.
