@@ -1,8 +1,12 @@
 # Learn React Router
 
+---
+
 A practical learning repository for understanding React Router in a React + Vite application. This project demonstrates client-side routing, nested routes, shared layouts, dynamic URL parameters, navigation links, and 404 handling.
 
 ## Project Structure
+
+---
 
 ```text
 learn-react-router/
@@ -29,6 +33,8 @@ learn-react-router/
 ```
 
 ## Getting Started
+
+---
 
 ### Installation
 
@@ -58,6 +64,8 @@ learn-react-router/
    ```
 
 ## Learning Modules
+
+---
 
 ### 1. Router Setup
 
@@ -113,6 +121,8 @@ This displays `NotFound.jsx` whenever the user visits a route that does not exis
 
 ## Available Scripts
 
+---
+
 From the `my-first-app/` directory:
 
 ```bash
@@ -123,6 +133,8 @@ npm run lint      # Run ESLint checks
 ```
 
 ## Key Topics Covered
+
+---
 
 - **Single Page Applications**: Routing without full page reloads
 - **BrowserRouter**: Browser-based routing context
@@ -136,6 +148,8 @@ npm run lint      # Run ESLint checks
 - **Component Organization**: Separating pages and reusable components
 
 ## How to Use
+
+---
 
 1. **Start with the route configuration**
    - Open `src/App.jsx`
@@ -158,6 +172,8 @@ npm run lint      # Run ESLint checks
    - Confirm that the 404 page appears
 
 ## Dependencies
+
+---
 
 - **react** - Library for building user interfaces
 - **react-dom** - React rendering package for the browser
@@ -184,4 +200,5 @@ npm run lint      # Run ESLint checks
 - Improve styling with a shared CSS file or component library.
 
 ## License
+
 Educational repository for learning purposes.
