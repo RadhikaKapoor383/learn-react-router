@@ -202,3 +202,9 @@ npm run lint      # Run ESLint checks
 ## License
 
 Educational repository for learning purposes.
+
+---
+
+## Author
+
+**Radhika Kapoor** — [GitHub](https://github.com/RadhikaKapoor383)
