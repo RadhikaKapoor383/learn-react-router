@@ -1,6 +1,5 @@
-// UseParam.jsx
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Profile from '..profile.jsx';
+import Profile from './Profile.jsx';
 
 function UseParam() {
   return (
