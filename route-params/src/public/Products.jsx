@@ -20,14 +20,19 @@ function Products() {
       <div>
         <button onClick={() => changeFilter("category", "shoes")}>Shoes</button>
         <button onClick={() => changeFilter("category", "bags")}>Bags</button>
+        <button onClick={() => changeFilter("category", "accessories")}>Accessories</button>
+        <button onClick={() => changeFilter("category", "clothing")}>Clothing</button>
       </div>
 
       <div>
         <button onClick={() => changeFilter("color", "red")}>Red</button>
         <button onClick={() => changeFilter("color", "blue")}>Blue</button>
+        <button onClick={() => changeFilter("color", "green")}>Green</button>
+        <button onClick={() => changeFilter("color", "black")}>Black</button>
+        <button onClick={() => changeFilter("color", "white")}>White</button>
       </div>
 
-      <p>Category: {category}</p>
+      <p style={{fontSize: "20"}}>Category: {category}</p>
       <p>Color: {color}</p>
     </div>
   );
