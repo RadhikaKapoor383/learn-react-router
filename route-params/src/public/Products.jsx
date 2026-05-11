@@ -32,7 +32,7 @@ function Products() {
         <button onClick={() => changeFilter("color", "white")}>White</button>
       </div>
 
-      <p style={{fontSize: "20"}}>Category: {category}</p>
+      <p>Category: {category}</p>
       <p>Color: {color}</p>
     </div>
   );
