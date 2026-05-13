@@ -12,6 +12,7 @@ function SearchParam() {
       <Routes>
         <Route path="/" element={<h1>Home Page</h1>} />
         <Route path="/products" element={<Products />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </BrowserRouter>
   );
