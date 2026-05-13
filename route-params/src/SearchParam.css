@@ -30,6 +30,13 @@ a {
   font-weight: 700;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .navbar .brand {
   color: #0f172a;
   font-size: 1.05rem;
@@ -180,6 +187,182 @@ a {
   margin: 80px auto;
 }
 
+.products-page,
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 44px 0;
+}
+
+.products-header,
+.info-hero {
+  padding: clamp(26px, 5vw, 52px);
+  background: #ffffff;
+  border: 1px solid #dfe6f0;
+  border-radius: 8px;
+}
+
+.products-header h1,
+.info-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+
+.products-header p:not(.eyebrow),
+.info-hero p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 18px 0 0;
+  color: #526174;
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.filter-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.filter-group,
+.active-filters,
+.info-card,
+.contact-form {
+  background: #ffffff;
+  border: 1px solid #dfe6f0;
+  border-radius: 8px;
+}
+
+.filter-group {
+  padding: 20px;
+}
+
+.filter-group h2,
+.active-filters h2,
+.info-card h2 {
+  margin: 0 0 14px;
+  color: #172033;
+  font-size: 1.05rem;
+}
+
+.filter-group button {
+  min-height: 38px;
+  margin: 0 8px 8px 0;
+  padding: 0 14px;
+  color: #172033;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.filter-group button:hover {
+  color: #ffffff;
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+.active-filters {
+  margin-top: 22px;
+  padding: 22px;
+}
+
+.active-grid,
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.active-grid p {
+  margin: 0;
+  padding: 16px;
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.active-grid span {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.info-grid {
+  margin-top: 22px;
+}
+
+.info-card {
+  padding: 22px;
+}
+
+.info-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  padding: clamp(24px, 4vw, 36px);
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  color: #334155;
+  font-weight: 800;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  color: #172033;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  min-height: 46px;
+  color: #ffffff;
+  background: #0f766e;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
 @media (max-width: 760px) {
   .navbar {
     align-items: flex-start;
@@ -187,7 +370,11 @@ a {
   }
 
   .hero,
-  .filter-grid {
+  .filter-grid,
+  .filter-section,
+  .active-grid,
+  .info-grid,
+  .contact-layout {
     grid-template-columns: 1fr;
   }
 
