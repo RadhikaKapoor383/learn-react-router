@@ -10,9 +10,11 @@ function Products() {
   const size = searchParams.get("size") || "medium" || "large" || "small" || "x-large";
   const filterPrice = searchParams.get("price") || "low" || "medium" || "high";
   const sort = searchParams.get("sort") || "asc" || "desc";
+  const other = searchParams.get("other") || "other";
+  const another = searchParams.get("another") || "another";
 
   function changeFilter(key, value) {
-    setSearchParams({ category, color, size, filterPrice, sort, [key]: value });
+    setSearchParams({ category, color, size, filterPrice, sort, other, another, [key]: value });
     // setSearchParams URL ko update karta hai
   }
 
@@ -56,11 +58,18 @@ function Products() {
         <button onClick={() => changeFilter("sort", "desc")}>Sort Descending</button>
       </div>
 
+      <div>
+        <button onClick={() => changeFilter("other", "other")}>Other</button>
+        <button onClick={() => changeFilter("another", "another")}>Another</button>
+      </div>
+
       <p>Category: {category}</p>
       <p>Color: {color}</p>
       <p>Size: {size}</p>
       <p>Price: {filterPrice}</p>
       <p>Sort: {sort}</p>
+      <p>Other: {other}</p>
+      <p>Another: {another}</p>
     </div>
   );
 }
