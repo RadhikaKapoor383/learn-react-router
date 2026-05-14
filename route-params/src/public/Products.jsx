@@ -19,6 +19,9 @@ const products = [
   { id: 16, name: 'Silk Scarf', category: 'accessories', color: 'red', size: 'medium', price: 32 },
   { id: 17, name: 'Canvas Belt', category: 'accessories', color: 'blue', size: 'large', price: 28 },
   { id: 18, name: 'Winter Beanie', category: 'accessories', color: 'green', size: 'small', price: 22 },
+  { id: 19, name: 'Aviator Sunglasses', category: 'accessories', color: 'black', size: 'medium', price: 150 },
+  { id: 20, name: 'Round Sunglasses', category: 'accessories', color: 'yellow', size: 'medium', price: 130 },
+  {id: 21, name: "T-Shirt", category: 'clothing', color: 'black', size: 'large', price: 250},
 ];
 
 const priceFilters = {
