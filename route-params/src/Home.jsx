@@ -60,29 +60,6 @@ function Home() {
             <p><span>4</span>Sizes</p>
           </div>
         </div>
-
-        <div className="hero-panel" aria-label="Featured product preview">
-          <div className="preview-card preview-card-large">
-            <span className="preview-swatch preview-red" />
-            <div>
-              <p>Runner Flex Sneakers</p>
-              <strong>$65</strong>
-            </div>
-          </div>
-          <div className="preview-card preview-card-small">
-            <span className="preview-swatch preview-blue" />
-            <div>
-              <p>Campus Backpack</p>
-              <strong>$58</strong>
-            </div>
-          </div>
-          <div className="param-stack">
-            <span>category=shoes</span>
-            <span>color=red</span>
-            <span>size=medium</span>
-            <span>sort=asc</span>
-          </div>
-        </div>
       </section>
 
       <section className="quick-filters" aria-labelledby="quick-filters-title">
