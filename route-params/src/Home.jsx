@@ -16,6 +16,16 @@ const featuredFilters = [
     description: 'Jump straight into bags using search params.',
     path: '/products?category=bags&color=blue&size=small&price=medium&sort=asc',
   },
+  {
+    title: 'Green accessories',
+    description: 'Explore a variety of green accessories.',
+    path: '/products?category=accessories&color=green&size=small&price=medium&sort=asc',
+  },
+  {
+    title: 'Black clothing',
+    description: 'Discover the latest in black fashion.',
+    path: '/products?category=clothing&color=black&size=medium&price=medium&sort=asc',
+  },
 ];
 
 function Home() {
