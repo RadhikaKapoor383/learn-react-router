@@ -1,29 +1,29 @@
 import { useSearchParams } from 'react-router-dom';
 
 const products = [
-  { id: 1, name: 'Runner Flex Sneakers', category: 'shoes', color: 'red', size: 'medium', price: 65 },
-  { id: 2, name: 'Street Low Tops', category: 'shoes', color: 'white', size: 'small', price: 48 },
-  { id: 3, name: 'Trail Grip Boots', category: 'shoes', color: 'black', size: 'large', price: 120 },
-  { id: 4, name: 'Campus Backpack', category: 'bags', color: 'blue', size: 'large', price: 58 },
-  { id: 5, name: 'Leather Tote', category: 'bags', color: 'brown', size: 'x-large', price: 85 },
-  { id: 6, name: 'Mini Crossbody Bag', category: 'bags', color: 'green', size: 'small', price: 35 },
-  { id: 7, name: 'Travel Duffel', category: 'bags', color: 'black', size: 'x-large', price: 95 },
-  { id: 8, name: 'Cotton Hoodie', category: 'clothing', color: 'red', size: 'large', price: 72 },
-  {id: 9, name: 'sweatshirt', category: 'clothing', color: 'baby blue', size: 'large', price: 72 },
-  { id: 10, name: 'Linen Shirt', category: 'clothing', color: 'white', size: 'medium', price: 42 },
-  { id: 11, name: 'Denim Jacket', category: 'clothing', color: 'blue', size: 'x-large', price: 110 },
-  { id: 12, name: 'Leather Strap Watch', category: 'watches', color: 'black', size: 'medium', price: 180 },
-  { id: 13, name: 'Sport Timer Watch', category: 'watches', color: 'yellow', size: 'large', price: 135 },
-  { id: 14, name: 'Classic Silver Watch', category: 'watches', color: 'white', size: 'small', price: 220 },
-  { id: 15, name: 'Gold Hoop Earrings', category: 'jewelry', color: 'yellow', size: 'small', price: 75 },
-  { id: 16, name: 'Emerald Pendant', category: 'jewelry', color: 'green', size: 'medium', price: 145 },
-  { id: 17, name: 'Black Stone Ring', category: 'jewelry', color: 'black', size: 'small', price: 288 },
-  { id: 18, name: 'Silk Scarf', category: 'accessories', color: 'red', size: 'medium', price: 32 },
-  { id: 19, name: 'Canvas Belt', category: 'accessories', color: 'blue', size: 'large', price: 28 },
-  { id: 20, name: 'Winter Beanie', category: 'accessories', color: 'green', size: 'small', price: 22 },
-  { id: 21, name: 'Aviator Sunglasses', category: 'accessories', color: 'black', size: 'medium', price: 150 },
-  { id: 22, name: 'Round Sunglasses', category: 'accessories', color: 'yellow', size: 'medium', price: 130 },
-  {id: 23, name: "T-Shirt", category: 'clothing', color: 'black', size: 'large', price: 250},
+  { id: 1, name: 'Runner Flex Sneakers', category: 'shoes', color: 'red', size: 'medium', price: 65, displaySize: 'medium' },
+  { id: 2, name: 'Street Low Tops', category: 'shoes', color: 'white', size: 'small', price: 48, displaySize: 'small' },
+  { id: 3, name: 'Trail Grip Boots', category: 'shoes', color: 'black', size: 'large', price: 120, displaySize: 'large' },
+  { id: 4, name: 'Campus Backpack', category: 'bags', color: 'blue', size: 'large', price: 58, displaySize: 'large' },
+  { id: 5, name: 'Leather Tote', category: 'bags', color: 'brown', size: 'x-large', price: 85, displaySize: 'wide' },
+  { id: 6, name: 'Mini Crossbody Bag', category: 'bags', color: 'green', size: 'small', price: 35, displaySize: 'small' },
+  { id: 7, name: 'Travel Duffel', category: 'bags', color: 'black', size: 'x-large', price: 95, displaySize: 'wide' },
+  { id: 8, name: 'Cotton Hoodie', category: 'clothing', color: 'red', size: 'large', price: 72, displaySize: 'large' },
+  { id: 9, name: 'Sweatshirt', category: 'clothing', color: 'baby blue', size: 'large', price: 72, displaySize: 'medium' },
+  { id: 10, name: 'Linen Shirt', category: 'clothing', color: 'white', size: 'medium', price: 42, displaySize: 'small' },
+  { id: 11, name: 'Denim Jacket', category: 'clothing', color: 'blue', size: 'x-large', price: 110, displaySize: 'wide' },
+  { id: 12, name: 'Leather Strap Watch', category: 'watches', color: 'black', size: 'medium', price: 180, displaySize: 'medium' },
+  { id: 13, name: 'Sport Timer Watch', category: 'watches', color: 'yellow', size: 'large', price: 135, displaySize: 'large' },
+  { id: 14, name: 'Classic Silver Watch', category: 'watches', color: 'white', size: 'small', price: 220, displaySize: 'small' },
+  { id: 15, name: 'Gold Hoop Earrings', category: 'jewelry', color: 'yellow', size: 'small', price: 75, displaySize: 'small' },
+  { id: 16, name: 'Emerald Pendant', category: 'jewelry', color: 'green', size: 'medium', price: 145, displaySize: 'medium' },
+  { id: 17, name: 'Black Stone Ring', category: 'jewelry', color: 'black', size: 'small', price: 288, displaySize: 'large' },
+  { id: 18, name: 'Silk Scarf', category: 'accessories', color: 'red', size: 'medium', price: 32, displaySize: 'medium' },
+  { id: 19, name: 'Canvas Belt', category: 'accessories', color: 'blue', size: 'large', price: 28, displaySize: 'small' },
+  { id: 20, name: 'Winter Beanie', category: 'accessories', color: 'green', size: 'small', price: 22, displaySize: 'small' },
+  { id: 21, name: 'Aviator Sunglasses', category: 'accessories', color: 'black', size: 'medium', price: 150, displaySize: 'large' },
+  { id: 22, name: 'Round Sunglasses', category: 'accessories', color: 'yellow', size: 'medium', price: 130, displaySize: 'medium' },
+  { id: 23, name: 'T-Shirt', category: 'clothing', color: 'black', size: 'large', price: 250, displaySize: 'large' },
 ];
 
 const priceFilters = {
@@ -42,6 +42,10 @@ function titleCase(value) {
 
 function uniqueValues(items, key) {
   return [...new Set(items.map((item) => item[key]))];
+}
+
+function colorClass(value) {
+  return value.replace(/\s+/g, '-');
 }
 
 function Products() {
@@ -199,8 +203,12 @@ function Products() {
 
         <div className="product-grid">
           {filteredProducts.map((product) => (
-            <article className="product-card" key={product.id}>
-              <div className={`product-swatch ${product.color}`} />
+            <article
+              className={`product-card product-card-${product.displaySize} product-tone-${colorClass(product.color)}`}
+              key={product.id}
+            >
+              <div className={`product-swatch ${colorClass(product.color)}`} />
+              <span className="product-tag">{titleCase(product.category)}</span>
               <h3>{product.name}</h3>
               <p>{titleCase(product.color)} / {titleCase(product.size)}</p>
               <strong>${product.price}</strong>
