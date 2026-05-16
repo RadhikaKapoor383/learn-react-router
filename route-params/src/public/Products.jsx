@@ -39,6 +39,11 @@ const products = [
   { id: 35, name: 'Desk Lamp', category: 'home', color: 'black', size: 'medium', price: 45, displaySize: 'medium' },
   { id: 36, name: 'Wall Clock', category: 'home', color: 'white', size: 'medium', price: 40, displaySize: 'small' },
   { id: 37, name: 'Ceramic Vase', category: 'home', color: 'baby blue', size: 'small', price: 30, displaySize: 'small' },
+  { id: 38, name: 'Area Rug', category: 'home', color: 'red', size: 'x-large', price: 200, displaySize: 'wide' },
+  { id: 39, name: 'Throw Pillow', category: 'home', color: 'green', size: 'medium', price: 25, displaySize: 'medium' },
+  { id: 40, name: 'Bookshelf', category: 'home', color: 'brown', size: 'x-large', price: 150, displaySize: 'wide' },
+  { id: 41, name: 'Electric Kettle', category: 'home', color: 'silver', size: 'medium', price: 60, displaySize: 'medium' },
+  { id: 42, name: 'Coffee Maker', category: 'home', color: 'black', size: 'medium', price: 80, displaySize: 'medium' },
 ];
 
 const priceFilters = {
