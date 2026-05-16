@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 const products = [
@@ -23,7 +24,21 @@ const products = [
   { id: 20, name: 'Winter Beanie', category: 'accessories', color: 'green', size: 'small', price: 22, displaySize: 'small' },
   { id: 21, name: 'Aviator Sunglasses', category: 'accessories', color: 'black', size: 'medium', price: 150, displaySize: 'large' },
   { id: 22, name: 'Round Sunglasses', category: 'accessories', color: 'yellow', size: 'medium', price: 130, displaySize: 'medium' },
-  { id: 23, name: 'T-Shirt', category: 'clothing', color: 'black', size: 'large', price: 250, displaySize: 'large' },
+  { id: 23, name: 'Classic T-Shirt', category: 'clothing', color: 'black', size: 'large', price: 25, displaySize: 'small' },
+  { id: 24, name: 'Classic T-Shirt', category: 'clothing', color: 'white', size: 'large', price: 25, displaySize: 'small' },
+  { id: 25, name: 'Classic T-Shirt', category: 'clothing', color: 'green', size: 'large', price: 28, displaySize: 'small' },
+  { id: 26, name: 'Classic T-Shirt', category: 'clothing', color: 'baby blue', size: 'medium', price: 28, displaySize: 'small' },
+  { id: 27, name: 'Formal Shirt', category: 'clothing', color: 'white', size: 'medium', price: 55, displaySize: 'medium' },
+  { id: 28, name: 'Formal Shirt', category: 'clothing', color: 'blue', size: 'medium', price: 55, displaySize: 'medium' },
+  { id: 29, name: 'Yoga Mat', category: 'fitness', color: 'green', size: 'large', price: 34, displaySize: 'wide' },
+  { id: 30, name: 'Training Gloves', category: 'fitness', color: 'black', size: 'small', price: 26, displaySize: 'small' },
+  { id: 31, name: 'Cricket Bat', category: 'fitness', color: 'brown', size: 'large', price: 92, displaySize: 'large' },
+  { id: 32, name: 'Matte Lipstick', category: 'beauty', color: 'red', size: 'small', price: 18, displaySize: 'small' },
+  { id: 33, name: 'Face Serum', category: 'beauty', color: 'white', size: 'small', price: 38, displaySize: 'medium' },
+  { id: 34, name: 'Sunscreen SPF 50', category: 'beauty', color: 'yellow', size: 'medium', price: 24, displaySize: 'small' },
+  { id: 35, name: 'Desk Lamp', category: 'home', color: 'black', size: 'medium', price: 45, displaySize: 'medium' },
+  { id: 36, name: 'Wall Clock', category: 'home', color: 'white', size: 'medium', price: 40, displaySize: 'small' },
+  { id: 37, name: 'Ceramic Vase', category: 'home', color: 'baby blue', size: 'small', price: 30, displaySize: 'small' },
 ];
 
 const priceFilters = {
@@ -50,6 +65,7 @@ function colorClass(value) {
 
 function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const categories = uniqueValues(products, 'category');
   const category = searchParams.get('category') || 'shoes';
@@ -62,9 +78,10 @@ function Products() {
   const colors = uniqueValues(categoryProducts, 'color');
   const sizes = uniqueValues(categoryProducts, 'size');
   const activePriceFilter = priceFilters[price] || priceFilters.all;
+  const showColorFilter = category === 'clothing';
 
   const filteredProducts = categoryProducts
-    .filter((product) => color === 'all' || product.color === color)
+    .filter((product) => !showColorFilter || color === 'all' || product.color === color)
     .filter((product) => size === 'all' || product.size === size)
     .filter((product) => product.price >= activePriceFilter.min && product.price <= activePriceFilter.max)
     .sort((first, second) => (sort === 'asc' ? first.price - second.price : second.price - first.price));
@@ -90,49 +107,87 @@ function Products() {
     });
   }
 
+  function clearFilters() {
+    setSearchParams({
+      category,
+      color: 'all',
+      size: 'all',
+      price: 'all',
+      sort: 'asc',
+    });
+  }
+
   return (
     <main className="products-page">
       <section className="products-header">
         <p className="eyebrow">Products</p>
-        <h1>Filter products through the URL</h1>
+        <h1>Shop products by category</h1>
         <p>
-          Choose a category first. The color, size, and price filters update
-          from that category, then the list sorts by price.
+          Choose from more categories, then open the drawer to refine products
+          by size, price, sort order, and clothing colors.
         </p>
       </section>
 
-      <section className="filter-section" aria-label="Product filters">
-        <div className="filter-group">
-          <h2>Category</h2>
-          {categories.map((item) => (
-            <button
-              className={category === item ? 'active-filter' : ''}
-              key={item}
-              onClick={() => changeCategory(item)}
-            >
-              {titleCase(item)}
-            </button>
-          ))}
+      <section className="category-strip" aria-label="Product categories">
+        {categories.map((item) => (
+          <button
+            className={category === item ? 'active-category' : ''}
+            key={item}
+            onClick={() => changeCategory(item)}
+          >
+            <span>{titleCase(item)}</span>
+            <small>{products.filter((product) => product.category === item).length} items</small>
+          </button>
+        ))}
+      </section>
+
+      <div className="products-toolbar">
+        <div>
+          <h2>{titleCase(category)} Collection</h2>
+          <p>{filteredProducts.length} products found</p>
+        </div>
+        <button className="drawer-trigger" onClick={() => setIsDrawerOpen(true)}>
+          Filters
+        </button>
+      </div>
+
+      <div
+        className={`drawer-backdrop ${isDrawerOpen ? 'show' : ''}`}
+        onClick={() => setIsDrawerOpen(false)}
+      />
+
+      <aside className={`filter-drawer ${isDrawerOpen ? 'open' : ''}`} aria-hidden={!isDrawerOpen}>
+        <div className="drawer-header">
+          <div>
+            <p className="eyebrow">Refine</p>
+            <h2>Filters</h2>
+          </div>
+          <button className="drawer-close" onClick={() => setIsDrawerOpen(false)} aria-label="Close filters">
+            x
+          </button>
         </div>
 
-        <div className="filter-group">
-          <h2>Color</h2>
-          <button
-            className={color === 'all' ? 'active-filter' : ''}
-            onClick={() => updateFilters({ color: 'all' })}
-          >
-            All Colors
-          </button>
-          {colors.map((item) => (
+        {showColorFilter && (
+          <div className="filter-group">
+            <h2>Color</h2>
             <button
-              className={color === item ? 'active-filter' : ''}
-              key={item}
-              onClick={() => updateFilters({ color: item })}
+              className={color === 'all' ? 'active-filter' : ''}
+              onClick={() => updateFilters({ color: 'all' })}
             >
-              {titleCase(item)}
+              All Colors
             </button>
-          ))}
-        </div>
+            {colors.map((item) => (
+              <button
+                className={color === item ? 'active-filter' : ''}
+                key={item}
+                onClick={() => updateFilters({ color: item })}
+              >
+                <span className={`filter-dot ${colorClass(item)}`} />
+                {titleCase(item)}
+              </button>
+            ))}
+          </div>
+        )}
 
         <div className="filter-group">
           <h2>Size</h2>
@@ -161,8 +216,8 @@ function Products() {
               key={key}
               onClick={() => updateFilters({ price: key })}
             >
-              {filter.label}
-            </button>
+            {filter.label}
+          </button>
           ))}
         </div>
 
@@ -181,13 +236,18 @@ function Products() {
             High to Low
           </button>
         </div>
-      </section>
+
+        <div className="drawer-actions">
+          <button onClick={clearFilters}>Clear</button>
+          <button onClick={() => setIsDrawerOpen(false)}>Show products</button>
+        </div>
+      </aside>
 
       <section className="active-filters" aria-label="Active filters">
         <h2>Active Search Params</h2>
         <div className="active-grid">
           <p><span>Category</span>{category}</p>
-          <p><span>Color</span>{color}</p>
+          <p><span>Color</span>{showColorFilter ? color : 'clothing only'}</p>
           <p><span>Size</span>{size}</p>
           <p><span>Price Filter</span>{price}</p>
           <p><span>Price Sort</span>{sort}</p>
@@ -196,11 +256,6 @@ function Products() {
       </section>
 
       <section className="product-results" aria-label="Filtered products">
-        <div className="results-heading">
-          <h2>{titleCase(category)} Results</h2>
-          <p>{filteredProducts.length} products found</p>
-        </div>
-
         <div className="product-grid">
           {filteredProducts.map((product) => (
             <article

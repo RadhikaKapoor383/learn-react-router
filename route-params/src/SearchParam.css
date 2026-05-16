@@ -324,11 +324,136 @@ a {
   line-height: 1.7;
 }
 
-.filter-section {
+.category-strip {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 16px;
   margin-top: 22px;
+}
+
+.category-strip button {
+  min-height: 92px;
+  padding: 16px;
+  text-align: left;
+  color: #172033;
+  background: #ffffff;
+  border: 1px solid #dfe6f0;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.category-strip button:hover,
+.category-strip .active-category {
+  border-color: #0f766e;
+  box-shadow: 0 12px 34px rgba(15, 118, 110, 0.12);
+}
+
+.category-strip span {
+  display: block;
+  font-weight: 900;
+}
+
+.category-strip small {
+  display: block;
+  margin-top: 8px;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.products-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.products-toolbar h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+}
+
+.products-toolbar p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.drawer-trigger {
+  min-height: 44px;
+  padding: 0 18px;
+  color: #ffffff;
+  background: #0f766e;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(15, 23, 42, 0.44);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.drawer-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.filter-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 21;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: min(92vw, 430px);
+  height: 100vh;
+  padding: 24px;
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: -24px 0 60px rgba(15, 23, 42, 0.18);
+  transform: translateX(100%);
+  transition: transform 220ms ease;
+}
+
+.filter-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.drawer-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.drawer-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: #172033;
+  background: #f1f5f9;
+  border: 1px solid #dfe6f0;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
 }
 
 .filter-group,
@@ -353,6 +478,9 @@ a {
 }
 
 .filter-group button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   min-height: 38px;
   margin: 0 8px 8px 0;
   padding: 0 14px;
@@ -375,6 +503,72 @@ a {
   color: #ffffff;
   background: #0f766e;
   border-color: #0f766e;
+}
+
+.filter-dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  border-radius: 999px;
+}
+
+.filter-dot.red {
+  background: #ef4444;
+}
+
+.filter-dot.white {
+  background: #f8fafc;
+}
+
+.filter-dot.black {
+  background: #111827;
+}
+
+.filter-dot.blue {
+  background: #2563eb;
+}
+
+.filter-dot.green {
+  background: #16a34a;
+}
+
+.filter-dot.yellow {
+  background: #facc15;
+}
+
+.filter-dot.brown {
+  background: #8b5a2b;
+}
+
+.filter-dot.baby-blue {
+  background: #8bd3f7;
+}
+
+.drawer-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.drawer-actions button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+}
+
+.drawer-actions button:first-child {
+  color: #172033;
+  background: #f1f5f9;
+}
+
+.drawer-actions button:last-child {
+  color: #ffffff;
+  background: #0f766e;
 }
 
 .active-filters {
@@ -656,7 +850,7 @@ a {
 
   .hero,
   .filter-grid,
-  .filter-section,
+  .category-strip,
   .active-grid,
   .info-grid,
   .contact-layout {
@@ -676,6 +870,15 @@ a {
   .results-heading {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .products-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .drawer-trigger {
+    width: 100%;
   }
 
   .hero {
