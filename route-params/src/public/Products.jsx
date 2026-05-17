@@ -44,6 +44,14 @@ const products = [
   { id: 40, name: 'Bookshelf', category: 'home', color: 'brown', size: 'x-large', price: 150, displaySize: 'wide' },
   { id: 41, name: 'Electric Kettle', category: 'home', color: 'silver', size: 'medium', price: 60, displaySize: 'medium' },
   { id: 42, name: 'Coffee Maker', category: 'home', color: 'black', size: 'medium', price: 80, displaySize: 'medium' },
+  { id: 43, name: 'Blender', category: 'home', color: 'white', size: 'medium', price: 70, displaySize: 'medium' },
+  { id: 44, name: 'Air Fryer', category: 'home', color: 'black', size: 'medium', price: 90, displaySize: 'medium' },
+  { id: 45, name: 'Vacuum Cleaner', category: 'home', color: 'red', size: 'large', price: 150, displaySize: 'large' },
+  { id: 46, name: 'Smart Speaker', category: 'home', color: 'white', size: 'small', price: 120, displaySize: 'small' },
+  { id: 47, name: 'Air Purifier', category: 'home', color: 'silver', size: 'medium', price: 130, displaySize: 'medium' },
+  { id: 48, name: 'Robot Vacuum', category: 'home', color: 'black', size: 'medium', price: 250, displaySize: 'medium' },
+  { id: 49, name: 'Standing Desk', category: 'home', color: 'brown', size: 'x-large', price: 300, displaySize: 'wide' },
+  { id: 50, name: 'Office Chair', category: 'home', color: 'black', size: 'large', price: 180, displaySize: 'large' },
 ];
 
 const priceFilters = {
