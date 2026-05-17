@@ -52,6 +52,12 @@ const products = [
   { id: 48, name: 'Robot Vacuum', category: 'home', color: 'black', size: 'medium', price: 250, displaySize: 'medium' },
   { id: 49, name: 'Standing Desk', category: 'home', color: 'brown', size: 'x-large', price: 300, displaySize: 'wide' },
   { id: 50, name: 'Office Chair', category: 'home', color: 'black', size: 'large', price: 180, displaySize: 'large' },
+  { id: 51, name: 'Gaming Chair', category: 'home', color: 'red', size: 'large', price: 220, displaySize: 'large' },
+  { id: 52, name: 'Moisturizer', category: 'beauty', color: 'white', size: 'small', price: 580, displaySize: 'medium' },
+  { id: 53, name: 'Perfume', category: 'beauty', color: 'yellow', size: 'medium', price: 120, displaySize: 'medium' },
+  { id: 54, name: 'Eyeliner', category: 'beauty', color: 'black', size: 'small', price: 25, displaySize: 'small' },
+  { id: 55, name: 'Mascara', category: 'beauty', color: 'black', size: 'small', price: 30, displaySize: 'small' },
+  { id: 56, name: 'Foundation', category: 'beauty', color: 'beige', size: 'medium', price: 45, displaySize: 'medium' },
 ];
 
 const priceFilters = {
