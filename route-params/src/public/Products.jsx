@@ -58,6 +58,8 @@ const products = [
   { id: 54, name: 'Eyeliner', category: 'beauty', color: 'black', size: 'small', price: 25, displaySize: 'small' },
   { id: 55, name: 'Mascara', category: 'beauty', color: 'black', size: 'small', price: 30, displaySize: 'small' },
   { id: 56, name: 'Foundation', category: 'beauty', color: 'beige', size: 'medium', price: 45, displaySize: 'medium' },
+  { id: 57, name: 'Blush', category: 'beauty', color: 'pink', size: 'small', price: 280, displaySize: 'small' },
+  { id: 58, name: 'Blush', category: 'beauty', color: 'red', size: 'small', price: 289, displaySize: 'small' },
 ];
 
 const priceFilters = {
