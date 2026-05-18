@@ -21,12 +21,12 @@ a {
   justify-content: space-between;
   gap: 16px;
   padding: 18px clamp(18px, 5vw, 72px);
-  background: #ffffff;
+  background: #eaeafa;
   border-bottom: 1px solid #dfe6f0;
 }
 
 .navbar a {
-  color: #334155;
+  color: #041438;
   font-weight: 700;
 }
 
@@ -38,7 +38,7 @@ a {
 }
 
 .navbar .brand {
-  color: #0f172a;
+  color: #041438;
   font-size: 1.05rem;
 }
 
@@ -71,7 +71,7 @@ a {
 
 .eyebrow {
   margin: 0 0 10px;
-  color: #0f766e;
+  color: #058a7f;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0;
@@ -117,7 +117,7 @@ a {
 }
 
 .secondary-link {
-  color: #0f172a;
+  color: #041438;
   border: 1px solid #cbd5e1;
   background: #ffffff;
 }
@@ -195,11 +195,11 @@ a {
 }
 
 .preview-red {
-  background: #e5484d;
+  background: #940409;
 }
 
 .preview-blue {
-  background: #2f6fed;
+  background: #02256b;
 }
 
 .param-stack {
@@ -261,7 +261,7 @@ a {
 }
 
 .filter-card-red::before {
-  background: #ef4444;
+  background: #940409;
 }
 
 .filter-card-black::before {
@@ -269,11 +269,11 @@ a {
 }
 
 .filter-card-blue::before {
-  background: #2563eb;
+  background: #02256b;
 }
 
 .filter-card-green::before {
-  background: #16a34a;
+  background: #0e9941;
 }
 
 .filter-card h3 {
