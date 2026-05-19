@@ -508,12 +508,12 @@ a {
 .filter-dot {
   width: 16px;
   height: 16px;
-  border: 1px solid rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(201, 210, 231, 0.18);
   border-radius: 999px;
 }
 
 .filter-dot.red {
-  background: #ef4444;
+  background: #7a0202;
 }
 
 .filter-dot.white {
@@ -525,23 +525,23 @@ a {
 }
 
 .filter-dot.blue {
-  background: #2563eb;
+  background: #142c5f;
 }
 
 .filter-dot.green {
-  background: #16a34a;
+  background: #156b34;
 }
 
 .filter-dot.yellow {
-  background: #facc15;
+  background: #fcd32ed3;
 }
 
 .filter-dot.brown {
-  background: #8b5a2b;
+  background: #773c06;
 }
 
 .filter-dot.baby-blue {
-  background: #8bd3f7;
+  background: #95dbfd;
 }
 
 .drawer-actions {
