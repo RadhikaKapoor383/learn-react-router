@@ -5,7 +5,7 @@ import UseParam from './useParam.jsx';
 function App() {
   return (
     <div>
-      <PostDetails />
+      <UseParam />
     </div>
   );
 }
