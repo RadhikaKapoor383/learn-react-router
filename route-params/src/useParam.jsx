@@ -7,7 +7,8 @@ function UseParam() {
       <nav>
         <Link to="/user/ahmed">Ahmed</Link> |{" "}
         <Link to="/user/sara">Sara</Link> |{" "}
-        <Link to="/user/ali">Ali</Link>
+        <Link to="/user/ali">Ali</Link> |{" "}
+        <Link to="/user/Asghar">Asghar</Link> |{" "}
       </nav>
 
       <Routes>
